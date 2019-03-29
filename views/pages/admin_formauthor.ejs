@@ -1,0 +1,43 @@
+<% include ../layout/headeradmin %>
+
+
+<%if(form=="add"){%>
+<form action="/admin/authors/addauthor_andsave" method="POST" class="form-container">
+    <%}else if(form=="edit"){%>
+    <form action="/admin/authors/<%=author._id%>/editauthor_andsave" method="POST" class="form-container">
+        <%}%>
+                        
+              <h1>Add Author</h1>
+
+              <label for="Authors"><b>Author First Name</b></label>
+              <%if(form=="edit"){%>
+        <input type="text" placeholder="Enter Author First Name" name="firstname" required value=<%=author.first_name%>>
+
+        <label for="Authors"><b>Author Last Name</b></label>
+        <input type="text" placeholder="Enter Author Last Name" name="lastname" required value=<%=author.last_name%>>
+
+        <label for="Authors"><b>Author Image</b></label>
+        <!-- <input type="file" id="file" name="image"> -->
+        <input type="file" id="file" name="image">
+
+        <label for="Authors"><b>Author Date of Birth</b></label>
+        <input type="text" placeholder="Enter Author Date of birth" name="date_birth" required
+            value=<%=author.date_birth%>>
+        <%}else if(form=="add"){%>
+        <input type="text" placeholder="Enter Author First Name" name="firstname" required>
+
+        <label for="Authors"><b>Author Last Name</b></label>
+        <input type="text" placeholder="Enter Author Last Name" name="lastname" required>
+
+        <label for="Authors"><b>Author Image</b></label>
+        <!-- <input type="file" id="file" name="image"> -->
+        <input type="file" id="file" name="image">
+
+        <label for="Authors"><b>Author Date of Birth</b></label>
+        <input type="text" placeholder="Enter Author Date of birth" name="date_birth" required>
+        <%}%>
+              <input  class="btn" type="submit" value="Add Author" >
+              <button type="button" class="btn cancel" onclick="window.location.href='/admin/authors'">Close</button>
+
+            </form>
+<% include ../layout/footer %>

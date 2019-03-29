@@ -1,0 +1,56 @@
+<% include ../layout/headeradmin %>
+
+
+    <button  onclick="window.location.href='/admin/books/add' " style=float:right>Add</button>
+
+
+    <table style="width:100%">
+      <tr>
+        <th>ID</th>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>CategoryID</th>
+        <th>AutherID</th>
+        <th>Actions</th>
+        </tr>
+        
+       
+        <% books.forEach((book) => { %>
+          <tr>
+              <td>
+                  <%= book._id %>
+              </td>
+              <td>
+                  <img src="/<%= book.image %>">  
+              </td>
+              <td>
+                <%= book.name %>
+            </td>
+            <td>
+              <%= book.categoryId %>
+          </td>
+          <td>
+            <%= book.authorId %>
+        </td>
+              <td>
+                    <a style="color: blue;  text-decoration: underline" onclick="window.location.href = '/admin/books/<%= book._id %>/deleteBook'" value='<%= book._id%>'>Delete</a>                 
+                    <a style="color: blue;  text-decoration: underline" onclick="window.location.href = '/admin/books/<%= book._id %>/editBook'" value='<%= book._id%>'>Edit</a>                 
+              </td>
+          </tr>
+          <% })%>
+   
+    </table>
+<script>
+function openForm1() {
+  document.getElementById("myForm1").style.display = "block";
+}
+function openForm2() {
+  document.getElementById("myForm2").style.display = "block";
+}
+function closeForm1() {
+  document.getElementById("myForm1").style.display = "none";
+}
+function closeForm2() {
+  document.getElementById("myForm2").style.display = "none";
+}
+</script>

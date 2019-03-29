@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <style>
+
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box}
+    
+    /* Full-width input fields */
+    /*input[type=text], input[type=password] */
+    
+    .s{
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+    
+    /* Set a style for all buttons */
+    button {
+      background-color: rgb(224, 157, 11);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    button:hover {
+      opacity:1;
+    }
+    
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      padding: 14px 20px;
+      background-color: #f44336;
+    }
+    
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn, .signupbtn {
+      float: left;
+      width: 50%;
+    }
+    
+    /* Add padding to container elements */
+    .container {
+      padding: 16px;
+    }
+    
+    .v{
+        width: 500px;
+        height: 300px;
+        margin-left: 750px;
+        margin-top: 100px;
+        position: relative;
+        margin-top: -50px;
+        /*background-color: aqua*/
+    }
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+      .cancelbtn, .signupbtn {
+         width: 100%;
+      }
+    }
+    
+    /*the login part*/
+    div{
+      display: inline;
+    }
+    .bt{
+      width: 90px;
+    }
+
+            /*the navigation bar styling*/
+            ul {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        overflow: hidden;
+                        background-color: #333;
+                        }
+
+                        li {
+                        float: left;
+                        }
+
+                        li a {
+                        display: block;
+                        color: white;
+                        text-align: center;
+                        padding: 14px 16px;
+                        text-decoration: none;
+                        }
+
+                        li a:hover:not(.active) {
+                        background-color: #111;
+                        }
+
+                        .active {
+                        background-color:rgb(224, 157, 11);
+                        }
+
+            /*the small divs styling*/
+           .big_divs{
+                background-color:aqua;
+                display: inline;
+            }
+            .first, .second, .third{
+                width:230px;
+                margin-left: 20px;
+                background-color: antiquewhite;
+                float: left;
+                margin-top: 100px;
+                border-radius: 15px;
+            }
+
+            .s{
+                      width: 100%;
+                      padding: 15px;
+                      margin: 5px 0 22px 0;
+                      display: inline-block;
+                      border: none;
+                      background: #f1f1f1;
+                    }
+                    
+                    input[type=text]:focus, input[type=password]:focus {
+                      background-color: #ddd;
+                      outline: none;
+                    }
+                    
+                    hr {
+                      
+                      margin-bottom: 25px;
+                    }
+                
+                    button {
+                      background-color: rgb(224, 157, 11);
+                      color: white;
+                      padding: 14px 20px;
+                      margin: 8px 0;
+                      border: none;
+                      cursor: pointer;
+                      width: 100%;
+                      opacity: 0.9;
+                    }
+                    
+                    button:hover {
+                      opacity:1;
+                    }
+             
+                    
+                    .alreadyuser{
+                      float: left;
+                      width: 40%;
+                      border-radius: 7px;
+                      margin-top: 25px; 
+                      margin-left: 15px;
+                      background-color: #555555;
+                    }
+                    /* Add padding to container elements */
+                    .container {
+                      padding: 16px;
+                    }
+                    
+                    .v{
+                        width: 500px;
+                        height: 300px;
+                        margin-left: 750px;
+                        margin-top: 70px;
+                        position: relative;
+                        
+                        /*background-color: aqua*/
+                    }
+                    /* Clear floats */
+                    .clearfix::after {
+                      content: "";
+                      clear: both;
+                      display: table;
+                    }
+
+                    body {
+                      background-image: url("imgg.jpg");
+                      background-color: #cccccc;
+                      }
+                      .heading{
+                        color: aliceblue;
+                      }
+
+
+                      .sm{
+                        margin-left: 15px;
+                      }
+        </style>
+<div class="bg-image">
+                <!--starting the navigation bar-->
+                <ul>
+                        <li><a class="active" href="#home">Home</a></li>
+                        <li><a href="#about us">About us</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#author">Author</a></li>
+                        <li><a href="#terms and conditions">Terms & conditions</a></li>
+                </ul>
+
+                <!--the small divs-->
+                <div class="big_divs">
+                    <div class="first">
+                      <div class="sm"> 
+                        <h3>Popular books</h3>
+                        <h4>The Great Gatsby</h4>
+                        <h4>To Kill a Mockingbird</h4>
+                        <h4>Harry Potter</h4>
+                        <h4>The Catcher in the Rye</h4>
+                        <h4>The Hobbit</h4>
+                      </div>
+                    </div>
+                    <div class="second">
+                      <div class="sm">
+                        <h3>Popular authors</h3>
+                        <h4>Stephen King</h4>
+                        <h4>Cassandra Clare</h4>
+                        <h4>James Patterson</h4>
+                        <h4>John Green</h4>
+                        <h4>Dan Brown</h4>
+                      </div>
+                    </div>
+                    <div class="third">
+                      <div class="sm">
+                      <h3>Popular categories</h3>
+                      <h4>Romance</h4>
+                      <h4>Science Fiction</h4>
+                      <h4>Fantasy</h4>
+                      <h4>Horror</h4>
+                    </div>
+                    </div>
+                </div>
+
+
+                  <!--starting the form-->
+      
+             
+
+<form class="log" action="/login" method="POST"> 
+    <div class="container">
+        <input type="email" placeholder="Enter your E-mail" name="email" required>
+        <input type="password" placeholder="Enter Password" name="pass" required>  
+      <button class="bt">Login</button>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
+  </form>
+                </div>
+      <a onclick="window.location.href='/'" style="color:dodgerblue">new to our website</a>
+
+    </body>
+</html>

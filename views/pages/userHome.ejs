@@ -1,0 +1,145 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a class="active">Home</a>
+
+    <button name="loginname" title="Contact" value="Contact"></button>
+    <form action="" method="POST">
+      <button name="logout">Logout</button>
+
+    </form>
+    <input type="text" placeholder="Search..">
+  </div>
+  <div class="sidenav">
+    <a onclick="window.location.href='/homepage'">All</a>
+    <a onclick="window.location.href='/homepage/read'">Read</a>
+    <a onclick="window.location.href='/homepage/reading'">Current Reading</a>
+    <a onclick="window.location.href='/homepage/wanttoread'">Want To Read</a>
+  </div>
+
+
+
+  <div class="readersTable">
+    <table>
+      <tr>
+        <th>Cover</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Avg Rate</th>
+        <th>Rating</th>
+        <th>Shelve</th>
+      </tr>
+      <% books.forEach((book) => { %>
+      <tr>
+        <!--  image book -->
+        <%if(shelves=="all"){%>
+        <td class="bookId" id=<%=book._id%>><%=book.image%> </td>
+        <%}else if(shelves=="read"|| shelves=="reading" || shelves=="wanttoread"){%>
+        <td class="bookId" id=<%=book._id%>><%=book.bookId.image%></td>
+        <%}%>
+
+        <!-- book name -->
+        <%if(shelves=="all"){%>
+        <td><%=book.name%></td>
+        <%}else if(shelves=="read"|| shelves=="reading" || shelves=="wanttoread"){%>
+        <td><%=book.bookId.name%></td>
+        <%}%>
+       
+        <!--  author -->
+        <%if(shelves=="all"){%>
+        <td><%=book.authorId.first_name%></td>
+        <%}else if(shelves=="read"|| shelves=="reading" || shelves=="wanttoread"){%>
+          <td><%=book.bookId.authorId.first_name%></td>
+        <%}%>
+
+
+        <td>
+          <%const v = "2"%>
+          <%if (v == "0"){%>
+
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <%}else if (v == "1"){%>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star "></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <%}else if (v == "2"){%>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <%}else if (v == "3"){%>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <%}else if (v == "4"){%>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <%}else if (v == "5"){%>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+
+          <%}%>
+        </td>
+        <td>
+          <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div>
+        </td>
+        <td>
+          <select name="combo">
+            <option class="read" id="read" value=<%=book._id%>>Read</option>
+            <option class="reading" value=<%=book._id%>>Reading</option>
+            <option class="wanttoread" value=<%=book._id%>>Want To Read</option>
+          </select>
+        </td>
+        <% })%>
+      </tr>
+
+
+
+
+
+
+
+    </table>
+  </div>
+
+
+  <script src="/js/rate.js"></script>
+
+</body>

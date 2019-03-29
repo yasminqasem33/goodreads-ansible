@@ -1,0 +1,27 @@
+<% include ../layout/headeradmin %>
+
+<div class="form-popup" id="myForm1" style="display:block">
+   
+    <%if(form=="add"){%>
+    <form action="/admin/categories/addCategory_andsave" method="POST" class="form-container">
+        <%}else if(form=="edit"){%>
+        <form action="/admin/categories/<%=category._id%>/editCategory_andsave" method="POST" class="form-container">
+            <%}%>
+            <h1> Add Category</h1>
+
+            <label for="Category"><b>Category</b></label>
+            <%if(form=="edit"){%>
+            <input type="text" placeholder="Enter Category" name="name" required value=<%=category.name%>>
+            <%}else if(form=="add"){%>
+
+            <input type="text" placeholder="Enter Category" name="name" required>
+            <%}%>
+            <input class="btn" type="submit" value="Add Category">
+
+            <button type="button" class="btn cancel" onclick="window.location.href='/admin/categories'">Close</button>
+        </form>
+
+
+
+</div>
+<% include ../layout/footer %>

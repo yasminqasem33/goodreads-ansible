@@ -1,0 +1,58 @@
+<% include ../layout/headeradmin %>
+
+
+<button  onclick="window.location.href='/admin/authors/addauthors'" style=float:right>Add</button>
+
+
+
+    <table style="width:100%">
+      <tr>
+        <th>ID</th>
+        <th>Photo</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of birth</th>
+        <th>Actions</th>
+      </tr>
+    </tr>
+    <% authors.forEach((author) => { %>
+      <tr>
+          <td>
+              <%=author._id %>
+          </td>
+          <td>
+              <img src="/<%= author.photo %>">       
+          </td>
+          <td>
+              <%= author.first_name %>
+        </td>
+        <td>
+            <%= author.last_name %>
+      </td>
+      <td>
+        <%= author.date_birth %>
+    </td>
+          <td>
+              <a style="color: blue; text-decoration: underline"  onclick="window.location.href = '/admin/authors/<%= author._id %>/deleteAuthor'" value='<%= author._id%>'>Delete</a>                 
+
+              <a style="color: blue; text-decoration: underline" onclick="window.location.href = '/admin/authors/<%= author._id %>/editAuthor'" value='<%= author._id%>'>Edit</a>                 
+
+          </td>
+      </tr>
+      <% })%>
+    </table>
+
+    <script>
+      function openForm1() {
+        document.getElementById("myForm1").style.display = "block";
+      }
+      function openForm2() {
+        document.getElementById("myForm2").style.display = "block";
+      }
+      function closeForm1() {
+        document.getElementById("myForm1").style.display = "none";
+      }
+      function closeForm2() {
+        document.getElementById("myForm2").style.display = "none";
+      }
+</script>

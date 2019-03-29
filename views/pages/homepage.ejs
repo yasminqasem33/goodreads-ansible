@@ -1,0 +1,120 @@
+<% include ../layout/header %>
+<!--login form-->
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box}
+    
+    /* Full-width input fields */
+    /*input[type=text], input[type=password] */
+    
+    .s{
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+    
+    /* Set a style for all buttons */
+    button {
+      background-color: rgb(224, 157, 11);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    button:hover {
+      opacity:1;
+    }
+    
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      padding: 14px 20px;
+      background-color: #f44336;
+    }
+    
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn, .signupbtn {
+      float: left;
+      width: 50%;
+    }
+    
+    /* Add padding to container elements */
+    .container {
+      padding: 16px;
+    }
+    
+    .v{
+        width: 500px;
+        height: 300px;
+        margin-left: 750px;
+        margin-top: 100px;
+        position: relative;
+        margin-top: -50px;
+        /*background-color: aqua*/
+    }
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+      .cancelbtn, .signupbtn {
+         width: 100%;
+      }
+    }
+    
+    /*the login part*/
+    div{
+      display: inline;
+    }
+    .bt{
+      width: 90px;
+    }
+    </style>
+<link rel="stylsheet" href="../../public/css/homeuser">
+
+  
+  <form action="/" method="POST" style="border:1px solid #ccc" class="v">   
+    <div class="container">
+      <h3>Create your free account</h3>
+      <hr>
+  
+      <input type="text" placeholder="First Name" name="FirstName" required>
+      <input type="text" placeholder="Last Name" name="LastName" required>
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Repeat Password" name="pswrepeat" required>
+      <br><br>
+      <!--to upload photo-->
+      <form>
+        Upload your photo: <input type="file" name="myFile"><br><br>
+      </form>
+      
+      <a onclick="window.location.href='/signin'" style="color:dodgerblue">Already a user</a>
+  
+      <div class="clearfix">
+       
+        <button class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+<% include ../layout/footer %>

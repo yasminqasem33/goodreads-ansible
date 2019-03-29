@@ -1,0 +1,58 @@
+<% include ../layout/headeradmin %>
+
+    <div class="form-popup" id="myForm2" style="display:block">
+      <%if(form=="add"){%>
+        <form action="/admin/books/add_save" method="POST" class="form-container" enctype="multipart/form-data">
+          <h1>Add Book</h1>
+              
+          <label for="Books"><b>Book Name</b></label>
+          <input type="text" placeholder="Enter Book Name" name="name" required>
+  
+          
+  
+          <label for="Books"><b>Author</b></label>
+          
+          <select name="categories" id="category">
+            <% categories.forEach((category) => { %>
+            <option value=<%= category.name %>> <%= category.name %> </option>
+              <% })%>
+        </select>
+              <select name="authors" id="authors">
+                  <% authors.forEach((author) => { %>
+                  <option value=<%= author.first_name %>> <%= author.first_name %> </option>
+                    <% })%>
+              </select>
+          <label for="Books"><b>Image</b></label>
+          <!-- <input type="file" id="file" name="image"> -->
+              <input type="file" id="file" name="image">
+              
+
+          <%}else if(form=="edit"){%>
+            <form action="/admin/books/<%=book._id%>/editBook_andsave" method="POST" class="form-container">
+              <h1>Edit Book </h1>
+              
+          <label for="Books"><b>Book Name</b></label>
+          <input type="text" placeholder="Enter Book Name" name="name" required value=<%=book.name%>>
+  
+          
+  
+          <label for="Books"><b>Author</b></label>
+          
+          <select name="categories" id="category">
+            <% categories.forEach((category) => { %>
+            <option value=<%= category.name %>> <%= category.name %> </option>
+              <% })%>
+        </select>
+              <select name="authors" id="authors">
+                  <% authors.forEach((author) => { %>
+                  <option value=<%= author.first_name %>> <%= author.first_name %> </option>
+                    <% })%>
+              </select>
+          <label for="Books"><b>Image</b></label>
+          <input type="text" id="file" name="image" value="book.image">
+            <%}%>
+            <input class="btn" type="submit" value="Add Book">
+            <button type="button" class="btn cancel" onclick="window.location.href='/admin/books'">Close</button>
+        </form>
+      </div>
+<% include ../layout/footer %>
