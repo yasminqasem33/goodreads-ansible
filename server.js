@@ -1,7 +1,7 @@
 //installed modules by  => npm i name_modules --save 
 const express = require('express')
 var bodyParser = require('body-parser')
-const bcrypt=require('bcrypt')
+//const bcrypt=require('bcrypt')
 const mongoose = require('mongoose')
 const adminModel = require('./models/adminModel')
 const userModel = require('./models/userModel')
