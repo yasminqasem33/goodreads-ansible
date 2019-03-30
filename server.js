@@ -37,7 +37,7 @@ const server = http.createServer((app),(req, res) => {
 const userRouter = require('./routes/userRouter')
 const adminRouter = require('./routes/adminRouter')
 
-
+/*
 mongoose.connect(MONGO_URL, {
     autoReconnect: true,
     reconnectTries: Number.MAX_VALUE,
@@ -49,6 +49,7 @@ mongoose.connect(MONGO_URL, {
         console.log(err);
     }
 });
+*/
 mongoose.Promise = global.Promise;
 
 
