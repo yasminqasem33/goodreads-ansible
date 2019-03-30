@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 require('passport-jwt');
 const LocalStrategy = require('passport-local').Strategy;
-const bcrypt=require('bcrypt')
+//const bcrypt=require('bcrypt')
 const cookieParser = require('cookie-parser')
 var expressValidator = require('express-validator');
 const adminRouter = express.Router()
