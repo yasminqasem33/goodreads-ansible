@@ -3,7 +3,7 @@ const express = require('express')
 var expressValidator = require('express-validator');
 const userRouter = express.Router()
 var bodyParser = require('body-parser')
-const bcrypt = require('bcrypt')
+//const bcrypt = require('bcrypt')
 userRouter.use(expressValidator())
 const userModel = require('../models/userModel')
 const categoryModel = require('../models/categoryModel')
