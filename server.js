@@ -14,7 +14,7 @@ const LocalStrategy = require('passport-local');
 const cors = require('cors');
 var jwt = require('jsonwebtoken');
 const http =require('http')
-const MONGO_URL = process.env.MONGO_URL || 'mongodb://192.168.20.26:27017/good';
+const MONGO_URL = process.env.MONGO_URL || 'mongodb://192.168.20.40:27017/good';
 var fs = require('fs');
 var multer = require('multer');
 const app = express()
@@ -37,7 +37,7 @@ const server = http.createServer((app),(req, res) => {
 const userRouter = require('./routes/userRouter')
 const adminRouter = require('./routes/adminRouter')
 
-
+/*
 mongoose.connect(MONGO_URL, {
     autoReconnect: true,
     reconnectTries: Number.MAX_VALUE,
@@ -49,6 +49,7 @@ mongoose.connect(MONGO_URL, {
         console.log(err);
     }
 });
+*/
 
 mongoose.Promise = global.Promise;
 
@@ -71,7 +72,7 @@ app.use( express.static('uploads') );
 //     console.log("Server Started!")
 
 // })
-server.listen(6000, '0.0.0.0', () => {
+server.listen(7000, '0.0.0.0', () => {
     console.log("Server running at 5000");
   });
 
