@@ -147,7 +147,7 @@ app.use( express.static('uploads') );
 
 // })
 
-server.listen(6000, '0.0.0.0', () => {
+server.listen(9000, '0.0.0.0', () => {
 
     console.log("Server running at 5000");
 
